@@ -6,6 +6,6 @@ RUN git clone https://github.com/resin-os/jetson-flash.git
 
 WORKDIR jetson-flash
 
-RUN npm install && mkdir workdir
+RUN npm install && mkdir /workdir 
 
-ENTRYPOINT ["bin/cmd.js", "-p", "-o", "./workdir", "-f"]
+ENTRYPOINT ["bin/cmd.js", "-p", "-o", "/workdir", "-f"]
