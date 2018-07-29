@@ -6,7 +6,8 @@ RUN git clone https://github.com/resin-os/jetson-flash.git
 
 WORKDIR jetson-flash
 
-RUN npm install && mkdir -p /workdir/jetson-flash-artifacts 
-ADD Linux_for_Tegra.tar.gz  /workdir/jetson-flash-artifacts/
-COPY Linux_for_Tegra.stamp  /workdir/jetson-flash-artifacts/
-ENTRYPOINT ["bin/cmd.js", "-p", "-o", "/workdir", "-f"]
+RUN npm install && mkdir -p /workdir/jetson-flash-artifacts /cache
+ADD Linux_for_Tegra.tar.gz  /cache/
+COPY Linux_for_Tegra.stamp  /cache/
+COPY start.sh /start.sh
+ENTRYPOINT ["/start.sh"]
