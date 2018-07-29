@@ -8,6 +8,6 @@ WORKDIR jetson-flash
 
 RUN npm install && mkdir -p /workdir/jetson-flash-artifacts /cache
 ADD Linux_for_Tegra.tar.gz  /cache/
-COPY Linux_for_Tegra.stamp  /cache/
+COPY hash.js hash.js
 COPY start.sh /start.sh
 ENTRYPOINT ["/start.sh"]

@@ -1,8 +1,11 @@
 #!/bin/bash
-
 cp -r /cache/Linux_for_Tegra /workdir/jetson-flash-artifacts/ || exit 1
-cp /cache/Linux_for_Tegra.stamp /workdir/jetson-flash-artifacts/Linux_for_Tegra.stamp || exit 1
 
-echo "here is what happened..."
+node hash.js
+
 ls -la /workdir/jetson-flash-artifacts/
-#bin/cmd.js -p -o /workdir -f $1
+
+echo "Starting stamp...."
+cat /workdir/jetson-flash-artifacts/Linux_for_Tegra.stamp
+
+bin/cmd.js -p -o /workdir -f $1
