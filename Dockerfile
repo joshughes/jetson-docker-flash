@@ -1,4 +1,4 @@
-FROM node:8-stretch
+FROM node:10-stretch
 
 RUN apt-get update && apt-get install -y git curl build-essential python sudo
 
