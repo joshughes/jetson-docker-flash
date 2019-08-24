@@ -7,7 +7,7 @@ services:
     #image: gcr.io/plasma-column-128721/custom-script-test
     build:
       context: ./
-      dockerfile: Dockerfile.arm64 
+      dockerfile: main.dockerfile 
     privileged: true
     tty: true
     restart: always
