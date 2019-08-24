@@ -1,0 +1,26 @@
+version: '2.1'
+networks: {}
+volumes:
+  resin-data: {}
+services:
+  main:
+    #image: gcr.io/plasma-column-128721/custom-script-test
+    build:
+      context: ./
+      dockerfile: Dockerfile.arm64 
+    privileged: true
+    tty: true
+    restart: always
+    network_mode: host
+    volumes:
+      - 'resin-data:/data'
+    labels:
+      io.resin.features.kernel-modules: '1'
+      io.resin.features.firmware: '1'
+      io.resin.features.dbus: '1'
+      io.resin.features.supervisor-api: '1'
+      io.resin.features.resin-api: '1'
+  
+    
+
+
