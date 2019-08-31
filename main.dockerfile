@@ -4,8 +4,7 @@ FROM balenalib/aarch64-node:10
 RUN apt-get update &&\
     apt-get install -y \
       git curl build-essential python sudo \
-      qemu binfmt-support qemu-user-static \
-      qemu-user-binfmt
+      qemu binfmt-support qemu-user-binfmt
 
 RUN git clone https://github.com/resin-os/jetson-flash.git
 
