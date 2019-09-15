@@ -9,4 +9,4 @@ echo "Starting stamp...."
 cat /workdir/jetson-flash-artifacts/Linux_for_Tegra.stamp
 
 #bin/cmd.js -p -o /workdir -f $1
-while true; do foo; sleep 2; done
+while true; do sleep 1; sleep 2; done
