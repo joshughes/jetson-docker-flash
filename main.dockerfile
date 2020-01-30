@@ -11,10 +11,10 @@ RUN git clone https://github.com/resin-os/jetson-flash.git
 WORKDIR jetson-flash
 
 RUN npm install && mkdir -p /workdir/jetson-flash-artifacts /cache
-
+ENV UDEV=1
 #RUN [ "cross-build-end" ]
 
 ADD Linux_for_Tegra.tar.gz  /cache/
 COPY hash.js hash.js
 COPY start.sh /start.sh
-ENTRYPOINT ["/start.sh"]
+CMD ["bash", "/start.sh"]
